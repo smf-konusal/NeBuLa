@@ -30,6 +30,14 @@
 /**
  * Initialize the template... mainly little settings.
  */
+ /**
+ * @package Nebula
+ * @version 1.0
+ * @theme Nebula
+ * @author Snrj - http://smf.konusal.com
+ * Copyright 2022 Nebula
+ *
+ */
 function template_init()
 {
 	global $settings, $txt;
@@ -37,7 +45,7 @@ function template_init()
 	// The version this template/theme is for. This should probably be the version of SMF it was created for.
 	$settings['theme_version'] = '2.1';
 	// Set the following variable to true if this theme requires the optional theme strings file to be loaded.
-	$settings['require_theme_strings'] = false;
+	$settings['require_theme_strings'] = true;
 	// Set the following variable to true if this theme wants to display the avatar of the user that posted the last and the first post on the message index and recent pages.
 	$settings['avatars_on_indexes'] = false;
 	// Set the following variable to true if this theme wants to display the avatar of the user that posted the last post on the board index.
@@ -163,17 +171,16 @@ function template_body_above()
 	global $context, $settings, $scripturl, $txt, $modSettings, $maintenance;
 	// Wrapper div now echoes permanently for better layout options. h1 a is now target for "Go up" links.
 			
-echo'
-<div id="sidedrawer" class="mui--no-user-select">
-      <div id="sidedrawer-brand" class="mui--appbar-line-height">
-        <a href="', $scripturl, '"><span class="mui--text-title">', empty($context['header_logo_url_html_safe']) ? '<img class="smflogo" src="' . $settings['images_url'] . '/logo.png" alt="Simple Machines Forum" title="Simple Machines Forum">' : '<img src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name_html_safe'] . '">', '</span></a>
-      </div>
-      <div class="mui-divider"></div>
-      <ul>';
-					kategorilersql();
-
-	echo '</ul></div>';
-	echo' 
+	echo'
+		<div id="sidedrawer" class="mui--no-user-select">
+		  <div id="sidedrawer-brand" class="mui--appbar-line-height">
+			<a href="', $scripturl, '"><span class="mui--text-title">', empty($context['header_logo_url_html_safe']) ? '<img class="smflogo" src="' . $settings['images_url'] . '/logo.png" alt="Simple Machines Forum" title="Simple Machines Forum">' : '<img src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name_html_safe'] . '">', '</span></a>
+		  </div>
+		  <div class="mui-divider"></div>
+		  <ul>
+			',kategorilersql(),'
+		</ul>
+		</div>
     <header id="sideheader">
       <div class="mui-appbar mui--appbar-line-height">
         <div class="mui-container-fluid">
@@ -349,19 +356,14 @@ echo'
 		</div><!-- .inner_wrap -->
 	</div><!-- #top_section -->
     </header>
-
-
-<div id="content-wrapper">
+	<div id="content-wrapper">
       <div class="mui--appbar-height"></div>
-      <div class="mui-container-fluid">';
-	echo '
-	<div id="header">
-		<h1 class="forumtitle">
-			<a id="top" href="', $scripturl, '">', empty($settings['site_slogan']) ? $context['forum_name_html_safe'] : '<div id="siteslogan">' . $settings['site_slogan'] . '</div>', '</a>
-		</h1>';
-
-	echo '
-	</div>
+		<div class="mui-container-fluid">
+			<div id="header">
+				<h1 class="forumtitle">
+					<a id="top" href="', $scripturl, '">', empty($settings['site_slogan']) ? $context['forum_name_html_safe'] : '<div id="siteslogan">' . $settings['site_slogan'] . '</div>', '</a>
+				</h1>
+			</div>
 	<div id="wrapper">';
 	// The main content should go here.
 		theme_linktree();
@@ -380,8 +382,9 @@ function template_body_below()
 			</div><!-- #main_content_section -->
 		</div><!-- #content_section -->
 	</div><!-- #wrapper -->
-</div><!-- #footerfix --> </div>
-    </div>';
+		</div>
+	</div>
+    </div><!-- #footerfix -->';
 
 	// Show the footer with copyright, terms and help links.
 	echo '
@@ -397,6 +400,7 @@ function template_body_below()
 	// There is now a global "Go to top" link at the right.
 	echo '
 		<ul>
+			<li class="floatright">',$txt['themecop'], '</li>
 			<li class="copyright">', theme_copyright(), '</li>
 		</ul>';
 	// Show the load time?
@@ -668,7 +672,7 @@ function kategorilersql()
 		'countChildPosts' => !empty($modSettings['countChildPosts']),
 	);
 	$context['cat'] = getBoardIndex($boardIndexOptions);
-foreach ($context['cat'] as $category)
+	foreach ($context['cat'] as $category)
 	{
 		if (empty($category['boards']) && !$category['is_collapsed'])
 			continue;

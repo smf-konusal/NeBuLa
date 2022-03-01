@@ -1,0 +1,1 @@
+<?php /** * @package Nebula * @version 1.0 * @theme Nebula * @author Snrj - http://smf.konusal.com * Copyright 2022 Nebula * */$txt['themecop']='<a href="http://smf.konusal.com/" title="smf destek" target="_blank"><span class="main_icons current_theme"></span> <span class="smalltext">Smf Destek</span></a>';?>

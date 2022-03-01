@@ -806,7 +806,6 @@ a[class^="mobile_generic_menu_"] {
 .profile_user_links ol {
 	margin-left: 10px;
 	clear: both;
-	column-count: 2;
 }
 .profile_user_links li {
 	font-size: .8rem;
@@ -4395,3 +4394,660 @@ border-radius: 100%;}
 
 .lastpost.mui--text-right{margin-right: 5px;}
 a.info:hover{text-decoration: none;}
+
+
+
+
+
+
+
+
+
+/*windows 10 ile uyumlu smf darkmode
+ Bu css smf.konusal.com kullanıcıları için snrj tarafından hazırlanmıştır*/
+
+@media (prefers-color-scheme: dark) {
+/*background*/
+#footer,html {
+    background: #191919;
+}
+body {
+    background: #191919;
+}
+::selection {
+    background: #99d4ff;
+}
+textarea:hover {
+    background: #777;
+}
+fieldset.admin_group legend,#ajax_in_progress,button,hr,input,select,textarea,button:focus,input:focus,select:focus,textarea:focus,#top_section,#wrapper,.coppa_contact,.dropmenu li ul,.top_menu,.generic_bar,.progress_bar.tooltip,.popup_window,.title_bar,.atwho-view {
+   background: #282828;
+}
+.activity_stats li span,.button.disabled,.button[disabled]:hover,.unread_notify:hover,input[disabled],select[disabled],textarea[disabled],.notify_dropdown a:hover {
+    background: #3e3f40;
+}
+.bbc_standard_quote {
+    background-color: #2c2d2f;
+}
+.bbc_alternate_quote {
+    background-color: #3e3f40;
+}
+.bbc_code {
+    background: #171717;
+}
+.toggle_down::before,.toggle_up::before {
+    background: #171717 url(../images/icons/toggle.png) no-repeat 0 0/17px;
+}
+.toggle_down:hover:before,.toggle_up:hover:before {
+    background-color: #333;
+}
+a.moderation_link,a.moderation_link:visited {
+    background: #f59e00;
+}
+.auto_suggest_item {
+    background: #ddd;
+}
+.auto_suggest_item_hover {
+    background: #888;
+}
+.amt {
+    background: #6d90ad;
+}
+#top_info li .active .amt,.dropmenu li .active .amt {
+    background: rgba(0,0,0,.2);
+}
+#top_info li a.active,.dropmenu li a.active,.dropmenu li a.active:hover,.dropmenu li:hover a.active,.generic_bar .bar,.warning_level.moderated .bar {
+    background-color: #292929;
+}
+#top_info>li:hover>a,#top_info>li>a.open,#top_info>li>a:hover,.dropmenu li a:focus,.dropmenu li a:hover,.dropmenu li:hover a {
+    background: #43474b;
+}
+.button.active,.button.active:hover,div.cat_bar {
+   background: #43474b;
+}
+.valid_input {
+    background: #f5fff0;
+}
+.invalid_input {
+   background: #282828;
+}
+.errorfile_table,#personal_messages .capacity_bar,.approvebg,.approvebg2,.generic_list_wrapper,.windowbg,.bg.even,.windowbg:nth-of-type(even),.stripes:nth-of-type(odd) {
+    background-color: #424242;
+}
+.errorfile_table td.current {
+    background: rgba(245,141,15,.2);
+}
+.errorbox {
+    background-color: #755d5d;
+}
+.noticebox {
+   background: #443934;
+}
+.infobox,.unread_pm {
+    background: #5b6f5b;
+}
+.progress_bar .bar {
+    background: orange;
+    background-color: #75da41;
+    background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)
+}
+.progress_yellow .bar {
+    background-color: #f6c51c;
+}
+.progress_green .bar,.warning_level.none .bar {
+    background-color: #75da41;
+}
+.progress_red .bar,.warning_level.muted .bar {
+    background-color: #f45d4c;
+}
+.progress_blue .bar {
+    background-color: #34c2e3;
+}
+#pick_theme .selected {
+    background: #cddbe6;
+}
+.warning_level.watched .bar {
+    background-color: #ffd800;
+}
+#personal_messages .capacity_bar span.empty {
+    background: #a6d69d;
+}
+#personal_messages .capacity_bar span.filled {
+    background: #eea800;
+}
+#personal_messages .capacity_bar span.full {
+    background: #f10909;
+}
+.popup_container {
+    background: rgba(40,64,80,.5);
+}
+.bg.odd,.windowbg:nth-of-type(odd),#post_draft_options {
+    background: #515151;
+}
+tr.windowbg:hover {
+    background: #1c1c1c;
+}
+.windowbg.locked {
+    background: #4d3f3f;
+}
+.windowbg.sticky {
+    background: #646464;
+}
+.windowbg.sticky.locked {
+    background: #372f2f;
+}
+.windowbg.approvetopic {
+    background: #31372f;
+}
+.windowbg.approvepost {
+    background: #3d4839;
+}
+.approvebg {
+    background: #31372f;
+}
+.approvebg2 {
+   background: #3d4839;
+}
+.roundframe,.information {
+    background: #312f2f;
+}
+.atwho-view .cur {
+    background: #36f;
+}
+.on {
+    background: #89e75a;
+}
+.off {
+    background: #a7a2a2;
+}
+#inner_section,#search_form .button,#top_section,.button,.dropmenu li li a:focus,.dropmenu li li a:hover,.dropmenu li li:hover,.dropmenu li li:hover>a,.dropmenu li ul,.popup_window,.quickbuttons li,.quickbuttons li ul,.quickbuttons li ul li:hover,.quickbuttons ul li a:focus,.top_menu {
+   background: #282828;
+}
+#search_form .button:hover,.button:hover,.quickbuttons li:hover {
+   background: #282828;
+}
+.navigate_section ul,.popup_content,.up_contain {
+    background: #282828;
+}
+.stripes:nth-of-type(even),.alternative {
+    background-color: #f2f2f2;
+}
+.alternative2 {
+    background-color: #e8edf0;
+}
+.tfacode {
+    background: #d0e7f8;
+}
+
+
+/*color*/
+body {
+    color: #a09c9c;
+}
+blockquote cite::before {
+    color: #aaa;
+}
+.highlight {
+    color: #ff7200!important;
+}
+.current_page {
+    color: #b3b3b3;
+}
+.birthday {
+    color: #920ac4;
+}
+.event {
+    color: #078907;
+}
+.holiday>span {
+    color: #025dff;
+}
+#ajax_in_progress a,.warn_moderate {
+    color: orange;
+}
+.auto_suggest_item_hover {
+    color: #eee;
+}
+#ajax_in_progress {
+    color: #f96f00;
+}
+#top_info li .active .amt,.dropmenu li .active .amt {
+    color: inherit;
+}
+.button:hover {
+    color: #af6700;
+}
+.button.active:hover {
+    color: #848383;
+}
+.info .subject,h1.forumtitle a {
+    color: #f2e7db;
+}
+.navigate_section ul li .dividers {
+    color: #3f6b8c;
+}
+.generic_bar,::selection {
+    color: rgba(221, 204, 204, 0.6);
+}
+.progress_bar {
+    color: rgba(221, 204, 204, 0.6);
+}
+.counter {
+    color: #3f3f3f;
+}
+.popup_heading {
+    color: #bf6900;
+}
+.keyinfo h5 a,.keyinfo h5 a strong,.page_number {
+    color: #afb08b;
+}
+.atwho-view strong {
+    color: #36f;
+}
+#display_head p {
+    color: #959595;
+}
+.alert,.error,.meaction,.red,.warn_mute {
+    color: red;
+}
+.blue {
+    color: #00f;
+}
+.poster h4,.poster h4 a,.poster h4 a:focus,.poster h4 a:hover .poster li h4 a,.poster li:hover h4 a,.poster li.poster_online a {
+    color: #cec2b5;
+}
+.green,.success,.warn_watch {
+    color: green;
+}
+a,a:visited,.dropmenu li li a,.dropmenu li:hover li a,.pagesection .button,.button {
+    color: #cac0c0;
+}
+button,input,select,textarea,.coppa_contact,.quickbuttons li,.quickbuttons li a,.quickbuttons li a:hover,.infobox,.approvebg,.approvebg2,.popup_content {
+    color: #e1e1e1 !important;
+}
+.dropmenu li strong,.keyinfo h5 .modified,dl.addrules dt.floatleft,.dropmenu li li a:focus,.dropmenu li li a:hover,.dropmenu li li:hover>a,.subject_title a,.tooltip {
+    color: #e2e2e2 !important;
+}
+.strong,h1,h2,h3,h4,h5,h6,strong,#detailedinfo dt,#tracking dt,.dropmenu li a.active:hover,.dropmenu li:hover a.active,.new_posts:hover,button,.navigate_section ul li {
+    color: #e3e3e3 !important;
+}
+.subbg,.subbg a,.titlebg,.titlebg a,h3.subbg,h3.titlebg,h4.subbg,h4.titlebg,#ic_recentposts .recenttime strong,#post_draft_options .settings strong,fieldset legend {
+    color: #e4e4e4 !important;
+}
+.codeheader,.quoteheader,.noticebox,.title_bar,.errorbox {
+    color: #e5e5e5 !important;
+}
+.atwho-view small {
+    color: #e6e6e6 !important;
+}
+.button.disabled,.button[disabled]:hover,input[disabled],select[disabled],textarea[disabled] {
+    color: #e7e7e7 !important;
+}
+#top_info>li:hover>a,#top_info>li>a.open,#top_info>li>a:hover,.dropmenu li a:focus,.dropmenu li a:hover,.dropmenu li:hover a,#top_info li a.active,.amt,.dropmenu li a.active,.cat_bar strong,.new_posts,#footer a,#footer li,#footer p,.button.active,.atwho-view .cur,.atwho-view .cur small,.atwho-view .cur strong,.cat_bar .desc,h3.catbg,h3.catbg a,h3.catbg a:hover {
+    color: #fff;
+}
+
+
+/*border*/
+button,input,select,textarea {
+    border: 1px solid #666;
+}
+button:hover,input:hover,select:hover,textarea:hover {
+    border-color: #777;
+}
+button:focus,input:focus,select:focus,textarea:focus {
+    border-color: #888;
+}
+.navigate_section ul,fieldset {
+     border: 1px solid #4d4a4a;
+}
+.button.disabled,.button[disabled]:hover,input[disabled],select[disabled],textarea[disabled] {
+    border-color: #b6b6b6;
+}
+blockquote {
+    border: 1px solid #858686;
+    border-left: 2px solid #686666;
+    border-right: 2px solid #686666;
+}
+blockquote cite {
+    border-bottom: 1px solid rgba(0,0,0,.1)
+}
+.bbc_code {
+    border: 1px solid #858686;
+    border-top: 2px solid #555454;
+    border-bottom: 3px solid #686666;
+}
+.bbc_link {
+    border-bottom: 1px solid #a8b6cf;
+}
+.bbc_link:hover,.boardslist a:hover {
+    border-bottom: 1px solid #346;
+}
+.toggle_down::before,.toggle_up::before {
+    border: 1px solid #444;
+}
+#ajax_in_progress {
+    border-bottom: 4px solid #f96f00;
+}
+.postbg {
+    border-left: 1px solid #7f7f7f;
+    border-right: 1px solid #7f7f7f;
+}
+.auto_suggest_div {
+    border: 1px solid #555454;
+}
+#top_info li a.active,.dropmenu li a.active,.dropmenu li a.active:hover,.dropmenu li:hover a.active {
+    border: 1px solid #5e5852;
+}
+#top_info>li:hover>a,#top_info>li>a.open,#top_info>li>a:hover,.dropmenu li a:focus,.dropmenu li a:hover,.dropmenu li:hover a {
+    border: 1px solid #000 !important;
+}
+.alerts_unread,.pm_unread {
+    border-top: 1px solid #5c5959;
+}
+.unread_notify {
+    border-bottom: 1px solid #5c5959;
+}
+.dropmenu li ul,.top_menu {
+    border: solid 1px #484747;
+    border-left: solid 1px #555454;
+    border-top: solid 1px #535353;
+}
+.dropmenu li li a:focus,.dropmenu li li a:hover,.dropmenu li li:hover>a {
+    border: 1px solid #000 !important;
+    border-top: 1px solid #000!important;
+}
+.button,.quickbuttons li,.quickbuttons li:hover {
+     border: 1px solid #4d4a4a;
+    border-right: 1px solid #555454;
+    border-bottom: 1px solid #777;
+}
+.button:hover {
+     border: 1px solid #4d4a4a;
+    border-left: 1px solid #555454;
+    border-top: 1px solid #777;
+}
+.button.active {
+    border: 1px solid #373737;
+}
+.buttonrow .button:not(:first-child) {
+    border-left-color: #373737;
+}
+#wrapper {
+    border: 1px solid #686363;
+}
+#top_section {
+    border-bottom: 1px solid #555454;
+}
+#footer {
+    border-top: 3px solid #4e4f51;
+}
+#index_common_stats {
+    border-top: 1px solid #5c5959;
+}
+.quickbuttons li ul {
+    border: solid 1px #999;
+    border-left: solid 1px #aaa;
+    border-top: solid 1px #555454;
+    border-radius: 0 0 4px 4px;
+}
+.quickbuttons li ul li:hover {
+    border: 1px solid #cfcfcf;
+    border-top: 1px solid #d4dee6;
+    border-bottom: 1px solid #cbdae6;
+}
+.coppa_contact {
+    border: 1px solid #222;
+}
+.errorfile_table td.current {
+    border-top: 1px solid rgba(0,0,0,.2);
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    border-width: 1px 0 1px 1px;
+}
+.errorbox {
+    border-top: 2px solid #c34;
+    border-bottom: 2px solid #c34;
+}
+.noticebox {
+    border-top: 1px solid #ffd324;
+    border-bottom: 1px solid #ffd324;
+}
+.infobox {
+    border-top: 1px solid green;
+    border-bottom: 1px solid green;
+}
+.descbox {
+    border: 1px solid #c5c5c5;
+}
+.generic_bar,.progress_bar {
+    border: 1px solid #717171;
+}
+#detailedinfo dl,#tracking dl {
+    border-bottom: 1px #ccc solid;
+}
+.activity_stats li span {
+    border: 1px solid #666;
+}
+.list_posts {
+    border-top: 1px solid #5c5959;
+}
+.boardslist a {
+    border-bottom: 1px solid #c4c4c4;
+}
+#personal_messages .capacity_bar {
+    border: 1px solid #adadad;
+}
+#personal_messages .capacity_bar span {
+    border-right: 1px solid #adadad;
+}
+#helpmain {
+     border: 1px solid #4d4a4a;
+}
+.tooltip {
+    border: 1px solid #aaa;
+}
+.popup_window {
+    border: 1px solid #777;
+}
+.popup_content {
+    border: 1px solid #555454;
+    border-bottom: 1px solid #ddd;
+    border-radius: 6px 6px 2px 2px;
+}
+.approvebg,.approvebg2,.generic_list_wrapper,.up_contain,.windowbg {
+    border: 1px solid #4d4a4a;
+}
+.generic_list_wrapper table.table_grid {
+    border-bottom: 1px solid #aaa;
+}
+.boardindex_table .board_stats p {
+    border-left: 1px solid #5c5959;
+    border-right: 1px solid #5c5959;
+}
+#attachment_previews,#info_center .sub_bar,#postAttachment,#postAttachment2,#post_settings,.children {
+    border-top: 1px solid #5c5959;
+}
+#ic_recentposts td {
+    border-top: 1px solid #757474;
+}
+#topic_container .windowbg {
+    border: 1px solid rgba(0,0,0,.13);
+}
+.attachments,.custom_fields_above_signature,.custom_fields_below_signature,.inner,.signature,.under_message {
+    border-top: 1px solid #222121;
+}
+#post_draft_options {
+    border: 1px solid #aaa;
+    border-left: 1px solid #555454;
+}
+#post_draft_options .settings dd,#post_draft_options .settings dt {
+    border-top: 1px solid #e4e4e4;
+}
+div.cat_bar {
+    border-bottom: 1px solid #777;
+}
+.roundframe {
+    border: 1px solid #686666;
+}
+.title_bar {
+     border: 1px solid #4d4a4a;
+    border-top: 2px solid #464545;
+    border-bottom: 2px solid #464545;
+}
+.atwho-view ul li,.sub_bar {
+    border-bottom: 1px solid #5c5959;
+}
+.atwho-view,.information {
+     border: 1px solid #4d4a4a;
+}
+#messageindex .information,#topic_icons .information {
+    border-top: 1px solid #5c5959;
+}
+.atwho-view {
+    box-shadow: 0 0 5px rgba(0,0,0,.1);
+}
+.on {
+    border-color: #74d246;
+}
+.off {
+    border-color: #969292;
+}
+.backtrace:not(:last-child) {
+    border-bottom: 1px solid #5c5959;
+}
+
+
+/*box-shadow*/
+
+hr {
+    box-shadow: 0 1px 0 #555454 inset;
+}
+.new_posts {
+    box-shadow: 1px 2px 2px rgba(0,0,0,.1),0 -2px 4px rgba(0,0,0,.1) inset;
+}
+.toggle_down::before,.toggle_up::before {
+ box-shadow: 0 1px 2px rgba(68,68,68,.2),0 1px 1px #000 inset,0 -5px 4px rgba(68,68,68,.1) inset;
+}
+.toggle_down:hover:before,.toggle_up:hover:before {
+ box-shadow: 0 1px 2px rgba(68,68,68,.25) inset;
+}
+#top_info li a.active,.dropmenu li a.active {
+ box-shadow: 0 5px 5px rgba(68, 68, 68, 0.6) inset;
+}
+#top_info>li:hover>a,#top_info>li>a.open,#top_info>li>a:hover,.dropmenu li a:focus,.dropmenu li a:hover,.dropmenu li:hover a {
+ box-shadow: 0 4px 4px rgba(68, 68, 68, 0.6) inset;
+ text-shadow: 1px 1px 3px rgba(68, 68, 68, 0.6);
+}
+.dropmenu li a.active:hover,.dropmenu li:hover a.active {
+ box-shadow: 0 5px 5px rgba(68, 68, 68, 0.6) inset;
+ text-shadow: none;
+}
+.dropmenu li ul,.top_menu {
+ box-shadow: 3px 3px 4px rgba(0,0,0,.3);
+}
+.button {
+ box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+}
+.button:hover {
+ box-shadow: -1px -1px 2px rgba(0,0,0,.07),-1px -2px 4px rgba(68, 68, 68, 0.6) inset;
+}
+.button.active {
+ text-shadow: 1px 1px 3px rgba(0,0,0,.6);
+}
+.buttonrow .button:not(:last-child) {
+ box-shadow: -1px 0 0 rgba(68, 68, 68, 0.6);
+}
+#wrapper {
+ box-shadow: 0 2px 3px rgba(0,0,0,.14);
+}
+#top_section {
+ box-shadow: 0 1px 4px rgba(0,0,0,.16);
+}
+h1.forumtitle a {
+ text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+.navigate_section ul {
+ box-shadow: 0 -2px 2px rgba(0,0,0,.08);
+}
+.navigate_section ul li {
+ text-shadow: 1px 1px 0 #4f4d4d;
+}
+.quickbuttons li,.quickbuttons li:hover {
+ box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+}
+.quickbuttons li ul {
+ box-shadow: 2px 3px 3px rgba(0,0,0,.2);
+}
+.generic_bar span,.progress_bar span {
+ text-shadow: 1px 1px rgba(68, 68, 68, 0.6);
+}
+.generic_bar .bar {
+ box-shadow: 4px -4px 8px rgba(0,0,0,.1) inset,4px 4px 8px rgba(68, 68, 68, 0.6) inset;
+}
+.progress_bar .bar {
+ box-shadow: -1px 1px 0 rgba(68, 68, 68, 0.6) inset,1px -1px 0 rgba(0,0,0,.1) inset;
+}
+.generic_bar.vertical .bar {
+ box-shadow: 4px -4px 4px rgba(0,0,0,.1) inset,4px 4px 4px rgba(68, 68, 68, 0.6) inset;
+}
+.list_posts {
+ box-shadow: 0 1px 0 #4f4d4d inset;
+}
+#helpmain {
+ box-shadow: 0 -2px 2px rgba(0,0,0,.1);
+}
+.tooltip {
+ box-shadow: 1px 2px 4px rgba(0,0,0,.2),0 0 10px rgba(0,0,0,.05) inset;
+}
+.popup_window {
+ box-shadow: 0 3px 6px rgba(0,0,0,.5);
+}
+.popup_content {
+ box-shadow: 0 -2px 3px rgba(0,0,0,.15),0 1px 1px rgba(68, 68, 68, 0.6);
+}
+.approvebg,.approvebg2,.generic_list_wrapper,.windowbg {
+ box-shadow: 0 -2px 2px rgba(0,0,0,.1);
+}
+.attachments,.custom_fields_above_signature,.custom_fields_below_signature,.inner,.signature,.under_message {
+ box-shadow: 0 1px 0 #646464  inset;
+}
+div.cat_bar {
+ box-shadow: 0 16px 20px rgba(68, 68, 68, 0.6) inset;
+ text-shadow: -1px -1px 1px rgba(0,0,0,.2);
+}
+h3.catbg a:hover {
+ text-shadow: -1px -1px 0 rgba(0,0,0,.4);
+}
+.roundframe {
+ box-shadow: 0 -2px 2px rgba(0,0,0,.1);
+}
+.sub_bar {
+ text-shadow: none;
+ box-shadow: 0 -1px 0 #999 inset;
+}
+.atwho-view {
+ box-shadow: 0 0 5px rgba(0,0,0,.1);
+}
+.sceditor-container {
+    background: #4d4a4a;
+    border: 1px solid #6f6e6e;
+}
+div.sceditor-toolbar {
+    background: #373535;
+border-bottom: 1px solid #6c6969;
+}
+.sceditor-container textarea {
+    background: #515151;
+}
+.mui-appbar,.mui-dropdown__menu,#sidedrawer,.mui-appbar{
+  background-color: #000 !important;
+}
+.mui-dropdown__menu > li > a,.sidedrawer-toggle,.mui-appbar,.mui-dropdown__menu,#sidedrawer,.mui-appbar{
+  color: #fff !important;
+}
+.mui-dropdown__menu > li > a:hover,.children strong:hover,.catlist:hover{background-color: #444 !important;}
+}
+
+@media (prefers-color-scheme: light) {
+/*light mode için kullanılması gereken kısım :D*/
+}

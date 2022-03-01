@@ -9,7 +9,14 @@
  *
  * @version 2.1.0
  */
-
+ /**
+ * @package Nebula
+ * @version 1.0
+ * @theme Nebula
+ * @author Snrj - http://smf.konusal.com
+ * Copyright 2022 Nebula
+ *
+ */
 /**
  * The top part of the outer layer of the boardindex
  */
