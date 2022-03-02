@@ -220,14 +220,16 @@ function template_body_above()
 	if ($context['user']['is_logged'])
 	{
 		// Firstly, the user's menu
+		// Thirdly, alerts
 		echo '
-			<ul class="floatleft" id="top_info">
+			<ul class="floatright" id="top_info">
 				<li>
-					<a href="', $scripturl, '?action=profile"', !empty($context['self_profile']) ? ' class="active"' : '', ' id="profile_menu_top" onclick="return false;">';
-		if (!empty($context['user']['avatar']))
-			echo $context['user']['avatar']['image'];
-		echo '<span class="textmenu">', $context['user']['name'], '</span></a>
-					<div id="profile_menu" class="top_menu"></div>
+					<a href="', $scripturl, '?action=profile;area=showalerts;u=', $context['user']['id'], '"', !empty($context['self_alerts']) ? ' class="active"' : '', ' id="alerts_menu_top">
+						<span class="main_icons alerts"></span>
+						<span class="textmenu">', $txt['alerts'], '</span>', !empty($context['user']['alerts']) ? '
+						<span class="amt">' . $context['user']['alerts'] . '</span>' : '', '
+					</a>
+					<div id="alerts_menu" class="top_menu scrollable"></div>
 				</li>';
 		// Secondly, PMs if we're doing them
 		if ($context['allow_pm'])
@@ -240,16 +242,15 @@ function template_body_above()
 					</a>
 					<div id="pm_menu" class="top_menu scrollable"></div>
 				</li>';
-		// Thirdly, alerts
 		echo '
 				<li>
-					<a href="', $scripturl, '?action=profile;area=showalerts;u=', $context['user']['id'], '"', !empty($context['self_alerts']) ? ' class="active"' : '', ' id="alerts_menu_top">
-						<span class="main_icons alerts"></span>
-						<span class="textmenu">', $txt['alerts'], '</span>', !empty($context['user']['alerts']) ? '
-						<span class="amt">' . $context['user']['alerts'] . '</span>' : '', '
-					</a>
-					<div id="alerts_menu" class="top_menu scrollable"></div>
-				</li>';
+					<a href="', $scripturl, '?action=profile"', !empty($context['self_profile']) ? ' class="active"' : '', ' id="profile_menu_top" onclick="return false;">';
+				if (!empty($context['user']['avatar']))
+					echo $context['user']['avatar']['image'];
+				echo '<span class="textmenu">', $context['user']['name'], '</span></a>
+							<div id="profile_menu" class="top_menu"></div>
+				</li>
+				';
 		// A logout button for people without JavaScript.
 		if (empty($settings['login_main_menu']))
 			echo '
@@ -268,14 +269,14 @@ function template_body_above()
 		if (!empty($settings['login_main_menu']))
 		{
 			echo '
-			<ul class="floatleft">
+			<ul class="floatright">
 				<li class="welcome">', sprintf($txt[$context['can_register'] ? 'welcome_guest_register' : 'welcome_guest'], $context['forum_name_html_safe'], $scripturl . '?action=login', 'return reqOverlayDiv(this.href, ' . JavaScriptEscape($txt['login']) . ', \'login\');', $scripturl . '?action=signup'), '</li>
 			</ul>';
 		}
 		else
 		{
 			echo '
-			<ul class="floatleft" id="top_info">
+			<ul class="floatright" id="top_info">
 				<li class="welcome">
 					', sprintf($txt['welcome_to_forum'], $context['forum_name_html_safe']), '
 				</li>
@@ -297,24 +298,10 @@ function template_body_above()
 	else
 		// In maintenance mode, only login is allowed and don't show OverlayDiv
 		echo '
-			<ul class="floatleft welcome">
+			<ul class="floatright welcome">
 				<li>', sprintf($txt['welcome_guest'], $context['forum_name_html_safe'], $scripturl . '?action=login', 'return true;'), '</li>
 			</ul>';
-	if (!empty($modSettings['userLanguage']) && !empty($context['languages']) && count($context['languages']) > 1)
-	{
-		echo '
-			<form id="languages_form" method="get" class="floatright">
-				<select id="language_select" name="language" onchange="this.form.submit()">';
-		foreach ($context['languages'] as $language)
-			echo '
-					<option value="', $language['filename'], '"', isset($context['user']['language']) && $context['user']['language'] == $language['filename'] ? ' selected="selected"' : '', '>', str_replace('-utf8', '', $language['name']), '</option>';
-		echo '
-				</select>
-				<noscript>
-					<input type="submit" value="', $txt['quick_mod_go'], '">
-				</noscript>
-			</form>';
-	}
+
 	if ($context['allow_search'])
 	{
 		echo '
@@ -398,6 +385,21 @@ function template_body_below()
 	echo'
 		<div class="inner_wrap">';
 	// There is now a global "Go to top" link at the right.
+	if (!empty($modSettings['userLanguage']) && !empty($context['languages']) && count($context['languages']) > 1)
+	{
+		echo '
+			<form id="languages_form" method="get" class="floatright">
+				<select id="language_select" name="language" onchange="this.form.submit()">';
+		foreach ($context['languages'] as $language)
+			echo '
+					<option value="', $language['filename'], '"', isset($context['user']['language']) && $context['user']['language'] == $language['filename'] ? ' selected="selected"' : '', '>', str_replace('-utf8', '', $language['name']), '</option>';
+		echo '
+				</select>
+				<noscript>
+					<input type="submit" value="', $txt['quick_mod_go'], '">
+				</noscript>
+			</form>';
+	}
 	echo '
 		<ul>
 			<li class="floatright">',$txt['themecop'], '</li>
@@ -482,7 +484,7 @@ function template_menu()
 	{
 		echo '
 						<li class="button_', $act, '', !empty($button['sub_buttons']) ? ' subsections"' : '"', '>
-							<a', $button['active_button'] ? ' class="active"' : '', ' href="', $button['href'], '"', isset($button['target']) ? ' target="' . $button['target'] . '"' : '', isset($button['onclick']) ? ' onclick="' . $button['onclick'] . '"' : '', '>
+							<a class="', $button['active_button'] ? 'active' : '', '  mui-btn--small mui-btn--flat mui-btn--primary" href="', $button['href'], '"', isset($button['target']) ? ' target="' . $button['target'] . '"' : '', isset($button['onclick']) ? ' onclick="' . $button['onclick'] . '"' : '', '>
 								', $button['icon'], '<span class="textmenu">', $button['title'], !empty($button['amt']) ? ' <span class="amt">' . $button['amt'] . '</span>' : '', '</span>
 							</a>';
 		// 2nd level menus
@@ -678,14 +680,14 @@ function kategorilersql()
 			continue;
 
 		echo '
-		<div class="main_container"><strong class="catlist">', $category['name'], '</strong>
+		<div class="main_container"><strong class="catlist"><span class="main_icons change_menu2"></span>  ', $category['name'], '</strong>
 			<div id="category_', $category['id'], '_boards">';
 		foreach ($category['boards'] as $board)
 		{
 			echo '
-				<div id="board_', $board['id'], '" class="up_contain ', (!empty($board['css_class']) ? $board['css_class'] : ''), '">
-					<div class="info">
-						<a class="subject mobile_subject" href="', $board['href'], '" id="b', $board['id'], '">', $board['name'], '</a>
+				<div id="board_', $board['id'], '">
+					<div class="info catlist">
+						<a class="subject mobile_subject" href="', $board['href'], '" id="b', $board['id'], '"><span class="main_icons merge"></span> ', $board['name'], '</a>
 				</div>';
 		if (!empty($board['children']))
 			{
@@ -701,12 +703,15 @@ function kategorilersql()
 					if ($child['can_approve_posts'] && ($child['unapproved_posts'] || $child['unapproved_topics']))
 						$child['link'] .= ' <a href="' . $scripturl . '?action=moderate;area=postmod;sa=' . ($child['unapproved_topics'] > 0 ? 'topics' : 'posts') . ';brd=' . $child['id'] . ';' . $context['session_var'] . '=' . $context['session_id'] . '" title="' . sprintf($txt['unapproved_posts'], $child['unapproved_topics'], $child['unapproved_posts']) . '" class="moderation_link amt">!</a>';
 
-					$children[] = $child['new'] ? '<span class="strong">' . $child['link'] . '</span>' : '<span>' . $child['link'] . '</span>';
+					$children[] = $child['new'] ? '<li class="strong">' . $child['link'] . '</li>' : '<li>' . $child['link'] . '</li>';
 				}
 
 				echo '
-					<div id="board_', $board['id'], '_children" class="children">
-						<p><strong id="child_list_', $board['id'], '">', $txt['sub_boards'], '</strong>', implode(' ', $children), '</p>
+					<div id="board_', $board['id'], '_children" class="mui-dropdown floatright">
+						<button class="mui-btn mui-btn--small mui-btn--primary" data-mui-toggle="dropdown" id="child_list_', $board['id'], '">
+						', $txt['sub_boards'], '
+						<span class="mui-caret"></span>
+					  </button> <ul class="mui-dropdown__menu mui-dropdown__menu--right">', implode(' ', $children), ' </ul>
 					</div>';
 			}
 

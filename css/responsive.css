@@ -213,6 +213,10 @@
 		display: block;
 		min-height: 2em;
 	}
+	.lastpost.mui--text-right{
+		display: none;
+	}
+
 	.up_contain .lastpost {
 		border-top: 1px solid #ddd;
 		min-height: initial;
@@ -573,6 +577,9 @@
 	/* 3rd level menu tests */
 	.dropmenu li ul ul {
 		margin: 0 !important;
+	}
+	.dropmenu > li {
+	  display: block;
 	}
 }
 
