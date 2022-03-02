@@ -4438,7 +4438,7 @@ a.info:hover{text-decoration: none;}
 @media (prefers-color-scheme: dark) {
 /*background*/
 #footer,html {
-    background: #191919;
+    background: #282828;
 }
 body {
     background: #191919;
@@ -5069,7 +5069,7 @@ border-bottom: 1px solid #6c6969 !important;
     background: #515151 !important;
 }
 .mui-appbar,.mui-dropdown__menu,#sidedrawer,.mui-appbar{
-  background-color: #000 !important;
+  background-color: #282828 !important;
 }
 .mui-appbar .mobile_user_menu,.mui-dropdown__menu > li > a,.sidedrawer-toggle,.mui-appbar,.mui-dropdown__menu,#sidedrawer,.mui-appbar{
   color: #fff !important;
