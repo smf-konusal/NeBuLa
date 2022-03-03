@@ -105,6 +105,7 @@ jQuery(function($) {
     .hide();
   
   $titleEls.on('click', function() {
-    $(this).next().slideToggle(200);
+    $(this).next().slideToggle(250);
   });
+  
 });

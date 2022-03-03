@@ -685,7 +685,7 @@ function kategorilersql()
 		foreach ($category['boards'] as $board)
 		{
 			echo '
-				<div id="board_', $board['id'], '">
+				<div id="board_', $board['id'], '" style="display: block;">
 					<div class="info catlist">
 						<a class="subject mobile_subject" href="', $board['href'], '" id="b', $board['id'], '"><span class="main_icons merge"></span> ', $board['name'], '</a>
 				</div>';
