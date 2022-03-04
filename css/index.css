@@ -4230,8 +4230,9 @@ img.theme_thumbnail {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 2;
+  z-index: 6;
   transition: left 0.2s;
+  background: #fff;
 }
 
 #sidedrawer {
@@ -4412,32 +4413,160 @@ float: right;
 	position: relative;
 }
 
-#footer .news p{text-align:center;}
+#footer .news p{
+	text-align:center;
+}
 .board_icon .avatar{
-display: inline-flex;
-align-items: center;
-vertical-align: top;
-width: 30px;
-height: 30px;
-border-radius: 100%;}
-
+	display: inline-flex;
+	align-items: center;
+	vertical-align: top;
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+}
 .lastpost.mui--text-right{margin-right: 5px;}
 a.info:hover{text-decoration: none;}
+.snrjfooter{background:#fff;padding-top:36px;padding-bottom:36px;line-height:1.7;}
+.footbaslik{padding:0;padding-bottom:10px;margin:0;text-decoration:none;font-size:13px;color:#bdc6db;font-weight:700;}
+.nebula_menu {
+	position: relative;
+}
+.nebula_menu > li{
+	display: inline-block;
+	margin: 0 2px 0 1px;
+	font-size: 0.9em;
+	line-height: 1.9em;vertical-align: middle;
+}
+.nebula_menu a {
+	outline: 0;
+}
+.nebula_menu li strong {
+	color: #333;
+}
 
+.nebula_menu li a {
+	background-color: #e9e9e9;
+	background-image: linear-gradient(hsla(0, 13.3%, 94.1%, 0.15), hsla(0, 0.9%, 78.6%, 0));
+	border: 1px solid #111;
+	color: #131212;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 13px;
+	margin: 1px;
+	padding: 6px 8px;
+	position: relative;
+	text-decoration: none;
+	text-shadow: 0 -1px 1px hsla(0,0%,0%,.8);
+	vertical-align: top;
+	border-radius: 3px;
+	box-shadow: 0 1px 4px hsla(0,0%,0%,.4),inset 0 1px 0 hsla(0,0%,100%,.2);
+}
+.nebula_menu li a:after{
+	background-image:-webkit-linear-gradient(left, #ffffff, #03a9f4e3, #ffffff);
+	background-image:linear-gradient(left, #ffffff, #03a9f4e3, #ffffff);
+	background-position:50% 0%;
+	background-size:200% 200%;
+	content:'';
+	display:none;
+	height:1px;left:0;
+	position:absolute;
+	right:0;
+	top:0;
+}
+.nebula_menu li a:hover:after,
+.nebula_menu  li a:focus:after{display:block;}
+.nebula_menu a.active {
+	color: #1e67f1;
+}
+.nebula_menu li ul{
+	z-index: 90;
+	position: absolute;
+	display: none;
+	min-width: 18.2em;
+	padding: 0.5em;
+	font-weight: normal;
+	border: solid 1px #999;
+	border-left: solid 1px #bbb;
+	border-top: solid 1px #ccc;
+	border-radius: 4px;
+	box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+	background: #fff;
+}
+.nebula_menu li li {
+	margin: 0;
+	padding: 0;
+	width: 17em;
+	font-size: 1em;
+	border-radius: 3px;
+	border: 1px solid transparent;
+}
+.nebula_menu li:hover li a, .nebula_menu li li a {
+	background: none;
+	padding: 0 9px;
+	color: #346;
+	border: none;
+	line-height: 2.2em;
+	width: 100%;
+	box-shadow: none;
+}
+.nebula_menu li li a > img {
+	vertical-align: middle;
+}
 
-
-
-
-
-
-
+.nebula_menu ul a:focus, .nebula_menu ul ul a:focus {
+	margin-left: 9990px;
+	border: none;
+	width: 17em;
+}
+.nebula_menu ul ul a:focus {
+	margin-left: 19950px;
+}
+.nebula_menu ul li:hover a:focus, .nebula_menu ul li a:focus {
+	margin-left: 0;
+	width: auto;
+}
+.nebula_menu li ul ul {
+	margin: -2em 0 0 15.3em;
+}
+.nebula_menu li li li a {
+	font-size: 1em;
+}
+.nebula_menu li li:hover {
+	border: none;
+}
+.nebula_menu li li:hover > a, .nebula_menu li li a:focus, .nebula_menu li li a:hover {
+	color: #333;
+	text-decoration: none;
+	border: 1px solid #cfcfcf;
+	border-top: 1px solid #d4dee6;
+}
+.nebula_menu li:hover ul {
+	display: block;
+}
+.nebula_menu li:hover ul ul, .nebula_menu li ul ul, .nebula_menu li:hover ul ul ul, .nebula_menu li ul ul ul {
+	left: -9999px;
+}
+.nebula_menu li li:hover ul, .nebula_menu li li ul {
+	left: -14px;
+}
+.nebula_menu li li.subsections > a::after {
+	position: absolute;
+	padding: 5px 0;
+	right: 10px;
+	font: 83.33%/150% Arial, sans-serif;
+	content: "\25ba";
+}
+.nebula_menu span.main_icons {
+	margin-right: 5px;
+	vertical-align: text-bottom;
+}
 
 /*windows 10 ile uyumlu smf darkmode
  Bu css smf.konusal.com kullanıcıları için snrj tarafından hazırlanmıştır*/
 
 @media (prefers-color-scheme: dark) {
 /*background*/
-#footer,html {
+html {
     background: #282828;
 }
 body {
@@ -4449,8 +4578,30 @@ body {
 textarea:hover {
     background: #777;
 }
-fieldset.admin_group legend,#ajax_in_progress,button,hr,input,select,textarea,button:focus,input:focus,select:focus,textarea:focus,#top_section,#wrapper,.coppa_contact,.dropmenu li ul,.top_menu,.generic_bar,.progress_bar.tooltip,.popup_window,.title_bar,.atwho-view {
-   background: #282828;
+.snrjfooter, #footer {
+    background: #282828;
+}
+.nebula_menu li a {
+  background-color: #393939;
+color: #f2eeee;
+}
+.nebula_menu a.active {
+  color: #ee42fd;
+}
+.nebula_menu li ul {
+  border: solid 1px #4f4f4f;
+  background: #151515;
+}
+.nebula_menu li:hover li a, .nebula_menu li li a {
+
+  color: #ebeef6;
+}
+.nebula_menu li li:hover > a, .nebula_menu li li a:focus, .nebula_menu li li a:hover {
+	border: 1px solid #444;
+	border-top: 1px solid #555;
+}
+#sideheader,fieldset.admin_group legend,#ajax_in_progress,button,hr,input,select,textarea,button:focus,input:focus,select:focus,textarea:focus,#top_section,#wrapper,.coppa_contact,.dropmenu li ul,.top_menu,.generic_bar,.progress_bar.tooltip,.popup_window,.title_bar,.atwho-view {
+   background: #282828 !important;
 }
 .activity_stats li span,.button.disabled,.button[disabled]:hover,.unread_notify:hover,input[disabled],select[disabled],textarea[disabled],.notify_dropdown a:hover {
     background: #3e3f40;

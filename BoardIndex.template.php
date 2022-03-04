@@ -22,6 +22,37 @@
  */
 function template_boardindex_outer_above()
 {
+	template_newsfader();
+}
+
+/**
+ * This shows the newsfader
+ */
+function template_newsfader()
+{
+	global $context, $settings;
+
+	// Show the news fader?  (assuming there are things to show...)
+	if (!empty($settings['show_newsfader']) && !empty($context['news_lines']))
+	{
+		echo '
+		<ul id="smf_slider" class="roundframe">';
+
+		foreach ($context['news_lines'] as $news)
+			echo '
+			<li>', $news, '</li>';
+
+		echo '
+		</ul>
+		<script>
+			jQuery("#smf_slider").slippry({
+				pause: ', $settings['newsfader_time'], ',
+				adaptiveHeight: 0,
+				captions: 0,
+				controls: 0,
+			});
+		</script>';
+	}
 }
 
 /**

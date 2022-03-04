@@ -376,6 +376,40 @@ function template_body_below()
 	// Show the footer with copyright, terms and help links.
 	echo '
 	<div id="footer">';
+	if(!empty($settings['snrjfooter']))
+		{
+		echo'
+		<div class="inner_wrap snrjfooter mui-row">
+			 <div class="mui-col-md-3">
+				<h5 class="footbaslik">'.(!empty($settings['snrjhakkindabaslik'])? ''.$settings['snrjhakkindabaslik'].'':''.$txt['snrjfootertext1'].'') .'</h5>
+				<p>'.(!empty($settings['snrjhakkindaicerik'])? ''.$settings['snrjhakkindaicerik'].'':''.$txt['snrjfootertext2'].'') .'</p>
+			 </div>
+			 <div class="mui-col-md-3">
+				<h5 class="footbaslik">'.(!empty($settings['snrjlinkbaslik'])? ''.$settings['snrjlinkbaslik'].'':''.$txt['snrjfootertext3'].'') .'</h5>
+				<ul>
+					<li>'.(!empty($settings['snrjhizlilink'])? '<a href="'.$settings['snrjhizlilink'].'" title="'.$settings['snrjhizlibaslik'].'">'.$settings['snrjhizlibaslik'].'</a>':''.$txt['snrjfootertext4'].'' ).'</li>
+					<li>'.(!empty($settings['snrjhizlilink1'])? '<a href="'.$settings['snrjhizlilink1'].'" title="'.$settings['snrjhizlibaslik1'].'">'.$settings['snrjhizlibaslik1'].'</a>':''.$txt['snrjfootertext4'].'' ).'</li>
+					<li>'.(!empty($settings['snrjhizlilink2'])? '<a href="'.$settings['snrjhizlilink2'].'" title="'.$settings['snrjhizlibaslik2'].'">'.$settings['snrjhizlibaslik2'].'</a>':''.$txt['snrjfootertext4'].'' ).'</li>
+					<li>'.(!empty($settings['snrjhizlilink3'])? '<a href="'.$settings['snrjhizlilink3'].'" title="'.$settings['snrjhizlibaslik3'].'">'.$settings['snrjhizlibaslik3'].'</a>':''.$txt['snrjfootertext4'].'' ).'</li>
+				</ul>
+			 </div>
+			 <div class="mui-col-md-3">
+				<h5 class="footbaslik">'.(!empty($settings['snrjlinkbaslik1'])? ''.$settings['snrjlinkbaslik1'].'':''.$txt['snrjfootertext3'].'' ).'</h5>
+				<ul>
+					<li>'.(!empty($settings['snrjhizlilink4'])? '<a href="'.$settings['snrjhizlilink4'].'" title="'.$settings['snrjhizlibaslik4'].'">'.$settings['snrjhizlibaslik4'].'</a>':''.$txt['snrjfootertext4'].'' ).'</li>
+					<li>'.(!empty($settings['snrjhizlilink5'])? '<a href="'.$settings['snrjhizlilink5'].'" title="'.$settings['snrjhizlibaslik5'].'">'.$settings['snrjhizlibaslik5'].'</a>':''.$txt['snrjfootertext4'].'' ).'</li>
+					<li>'.(!empty($settings['snrjhizlilink6'])? '<a href="'.$settings['snrjhizlilink6'].'" title="'.$settings['snrjhizlibaslik6'].'">'.$settings['snrjhizlibaslik6'].'</a>':''.$txt['snrjfootertext4'].'' ).'</li>
+					<li>'.(!empty($settings['snrjhizlilink7'])? '<a href="'.$settings['snrjhizlilink7'].'" title="'.$settings['snrjhizlibaslik7'].'">'.$settings['snrjhizlibaslik7'].'</a>':''.$txt['snrjfootertext4'].'' ).'</li>
+				</ul>
+			 </div>
+			 <div class="mui-col-md-3">
+				<h5 class="footbaslik">'.(!empty($settings['snrjbilgibaslik'])? ''.$settings['snrjbilgibaslik'].'':''.$txt['snrjfootertext5'].'') .'</h5>
+				<p>'.(!empty($settings['snrjbilgiicerik'])? ''.$settings['snrjbilgiicerik'].'':''.$txt['snrjfootertext6'].'') .'</p>
+			 </div> 
+		</div><br class="clear"/>';
+		}
+	
+	
 		// Show a random news item? (or you could pick one from news_lines...)
 	if (!empty($settings['enable_news']) && !empty($context['random_news_line']))
 		echo '
@@ -476,22 +510,25 @@ function theme_linktree($force_show = false)
 function template_menu()
 {
 	global $context;
-	echo '
 
-					<ul class="dropmenu menu_nav">';
+	echo '
+					<ul class="nebula_menu">';
+
 	// Note: Menu markup has been cleaned up to remove unnecessary spans and classes.
 	foreach ($context['menu_buttons'] as $act => $button)
 	{
 		echo '
 						<li class="button_', $act, '', !empty($button['sub_buttons']) ? ' subsections"' : '"', '>
-							<a class="', $button['active_button'] ? 'active' : '', '  mui-btn--small mui-btn--flat mui-btn--primary" href="', $button['href'], '"', isset($button['target']) ? ' target="' . $button['target'] . '"' : '', isset($button['onclick']) ? ' onclick="' . $button['onclick'] . '"' : '', '>
+							<a', $button['active_button'] ? ' class="active"' : '', ' href="', $button['href'], '"', isset($button['target']) ? ' target="' . $button['target'] . '"' : '', isset($button['onclick']) ? ' onclick="' . $button['onclick'] . '"' : '', '>
 								', $button['icon'], '<span class="textmenu">', $button['title'], !empty($button['amt']) ? ' <span class="amt">' . $button['amt'] . '</span>' : '', '</span>
 							</a>';
+
 		// 2nd level menus
 		if (!empty($button['sub_buttons']))
 		{
 			echo '
 							<ul>';
+
 			foreach ($button['sub_buttons'] as $childbutton)
 			{
 				echo '
@@ -504,6 +541,7 @@ function template_menu()
 				{
 					echo '
 									<ul>';
+
 					foreach ($childbutton['sub_buttons'] as $grandchildbutton)
 						echo '
 										<li>
@@ -511,9 +549,11 @@ function template_menu()
 												', $grandchildbutton['title'], !empty($grandchildbutton['amt']) ? ' <span class="amt">' . $grandchildbutton['amt'] . '</span>' : '', '
 											</a>
 										</li>';
+
 					echo '
 									</ul>';
 				}
+
 				echo '
 								</li>';
 			}
@@ -523,6 +563,7 @@ function template_menu()
 		echo '
 						</li>';
 	}
+
 	echo '
 					</ul><!-- .menu_nav -->';
 }

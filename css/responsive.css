@@ -530,7 +530,7 @@
 		height: 24px;
 		width: 24px;
 	}
-	.dropmenu li, .dropmenu li:hover,
+	.nebula_menu li:hover li a, .nebula_menu li li a,.nebula_menu li a,.dropmenu li, .dropmenu li:hover,
 	.dropmenu li a, .dropmenu li a:hover,
 	.dropmenu li a.active, .dropmenu li a.active:hover, .dropmenu li:hover a.active,
 	.dropmenu li ul, .dropmenu li li, .dropmenu li li a {
@@ -545,7 +545,7 @@
 		border-radius: 0;
 		padding: 5px 0 !important;
 	}
-	.dropmenu li li li a,
+	.nebula_menu li a,.dropmenu li li li a,
 	.dropmenu li li li a:hover {
 		padding: 5px 24px !important;
 	}
@@ -567,7 +567,7 @@
 		font: 83.33%/150% Arial, sans-serif;
 		content: "\25bc" !important;
 	}
-	.dropmenu li ul,
+	.nebula_menu li ul,.dropmenu li ul,
 	.dropmenu li li:hover ul, .dropmenu li li ul {
 		position: relative;
 		border-radius: 0;
@@ -578,7 +578,7 @@
 	.dropmenu li ul ul {
 		margin: 0 !important;
 	}
-	.dropmenu > li {
+	.nebula_menu > li,.dropmenu > li {
 	  display: block;
 	}
 }
