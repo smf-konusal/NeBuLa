@@ -68,11 +68,12 @@ function template_main()
 		echo '<div id="topic_container">';
 				foreach ($context['latest_posts'] as $post)
 				{
-				loadMemberData($post['poster']['id']);
-				loadMemberContext($post['poster']['id']);
+				
 					echo '
 						<div class="windowbg ">
-						<a href="',$post['poster']['href'],'" class="board_icon">', !empty($memberContext[$post['poster']['id']]['avatar']['image']) ? $memberContext[$post['poster']['id']]['avatar']['image'] : '<img class="avatar" src="'.$modSettings['avatar_url'].'/default.png" alt="*" />' ,'</a>
+						<div class="board_icon">
+						<a href="',$post['poster']['href'],'" class="board_on"></a>
+						</div>
 						<a class="info" href="', $post['href'], '">
 							
 								<h3 class="mui--text-title">', $post['subject'], '</h3>

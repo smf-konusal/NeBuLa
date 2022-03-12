@@ -174,7 +174,7 @@ function template_body_above()
 	echo'
 		<div id="sidedrawer" class="mui--no-user-select">
 		  <div id="sidedrawer-brand" class="mui--appbar-line-height">
-			<a href="', $scripturl, '"><span class="mui--text-title">', empty($context['header_logo_url_html_safe']) ? '<img class="smflogo" src="' . $settings['images_url'] . '/logo.png" alt="Simple Machines Forum" title="Simple Machines Forum">' : '<img src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name_html_safe'] . '">', '</span></a>
+			<a href="', $scripturl, '">', empty($context['header_logo_url_html_safe']) ? '<img class="smflogo" src="' . $settings['images_url'] . '/logo.png" alt="Simple Machines Forum" title="Simple Machines Forum">' : '<img src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name_html_safe'] . '">', '</a>
 		  </div>
 		  <div class="mui-divider"></div>
 		  <ul>
@@ -186,7 +186,6 @@ function template_body_above()
         <div class="mui-container-fluid">
           <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
           <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
-          <a href="', $scripturl, '"><span class="mui--text-title mui--visible-xs-inline-block mui--visible-sm-inline-block">', empty($context['header_logo_url_html_safe']) ? '<img class="smflogo" src="' . $settings['images_url'] . '/logo.png" alt="Simple Machines Forum" title="Simple Machines Forum">' : '<img src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name_html_safe'] . '">', '</span></a>
 			<div class="mui-dropdown floatright">
 				  <a id="appbar-more-vert" data-mui-toggle="dropdown"><i class="icon-more"></i></a>
 				  <ul class="mui-dropdown__menu mui-dropdown__menu--right">';
@@ -704,7 +703,7 @@ function template_quickbuttons($list_items, $list_class = null, $output_method =
 
 function kategorilersql()
 {
-	global $context, $sourcedir, $modSettings,$txt;
+global $context, $sourcedir, $modSettings,$txt,$scripturl;
 	
 	require_once($sourcedir . '/Subs-BoardIndex.php');
 	$boardIndexOptions = array(
@@ -721,7 +720,7 @@ function kategorilersql()
 			continue;
 
 		echo '
-		<div class="main_container"><strong class="catlist"><span class="main_icons change_menu2"></span>  ', $category['name'], '</strong>
+		<div class="main_container"><p class="catlist"><span class="main_icons change_menu2"></span>  ', $category['name'], '</p>
 			<div id="category_', $category['id'], '_boards">';
 		foreach ($category['boards'] as $board)
 		{
