@@ -104,10 +104,10 @@ function template_html_above()
 			'integrate_pre_css_output', 'integrate_pre_javascript_output' for a single file.
 	*/
 	// load in any css from mods or themes so they can overwrite if wanted
-	loadCSSFile('mui.min.css');
+	loadCSSFile('mui.min.css', array('minimize' => true));
+	loadJavascriptFile('mui.min.js', array('minimize' => true));	
 	template_css();
 	// load in any javascript files from mods and themes
-	loadJavascriptFile('mui.min.js');	
 	template_javascript();
 	echo '
 	<title>', $context['page_title_html_safe'], '</title>
@@ -177,9 +177,7 @@ function template_body_above()
 			<a href="', $scripturl, '">', empty($context['header_logo_url_html_safe']) ? '<img class="smflogo" src="' . $settings['images_url'] . '/logo.png" alt="Simple Machines Forum" title="Simple Machines Forum">' : '<img src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name_html_safe'] . '">', '</a>
 		  </div>
 		  <div class="mui-divider"></div>
-		  <ul>
 			',kategorilersql(),'
-		</ul>
 		</div>
     <header id="sideheader">
       <div class="mui-appbar mui--appbar-line-height">
@@ -720,7 +718,8 @@ global $context, $sourcedir, $modSettings,$txt,$scripturl;
 			continue;
 
 		echo '
-		<div class="main_container"><p class="catlist"><span class="main_icons change_menu2"></span>  ', $category['name'], '</p>
+		<div class="main_container">
+			<p class="catlist"> <span class="main_icons change_menu2"></span>  ', $category['name'], ' </p>
 			<div id="category_', $category['id'], '_boards">';
 		foreach ($category['boards'] as $board)
 		{

@@ -72,7 +72,7 @@ function template_main()
 					echo '
 						<div class="windowbg ">
 						<div class="board_icon">
-						<a href="',$post['poster']['href'],'" class="board_on"></a>
+						<a href="',$post['href'],'" class="board_on"></a>
 						</div>
 						<a class="info" href="', $post['href'], '">
 							

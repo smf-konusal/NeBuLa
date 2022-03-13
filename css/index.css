@@ -4330,18 +4330,7 @@ img.theme_thumbnail {
   padding-left: 20px;
 }
 
-#sidedrawer ul {
-  list-style: none;
-}
 
-#sidedrawer > ul {
- padding-left: 8px;
-margin-top: 30px;
-}
-
-#sidedrawer > ul > li:first-child {
-  padding-top: 15px;
-}
 
 .catlist {
 cursor: pointer;
