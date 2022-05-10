@@ -1027,10 +1027,6 @@ a[class^="mobile_generic_menu_"] {
 	box-sizing: border-box;
 	vertical-align: middle;
 }
-.buttonlist .button {
-	margin-top: 2px;
-	margin-bottom: 2px;
-}
 .pagesection .button {
 	color: #346;
 }
@@ -2411,6 +2407,7 @@ dl {
 	-webkit-hyphens: auto;
 	-ms-hyphens: auto;
 	hyphens: auto;
+	overflow-wrap: break-word;
 }
 .topic h4 {
 	margin: 3px 0;
@@ -3541,8 +3538,6 @@ ul.post_options li {
 	height: 22px;
 }
 #post_settings, #postAttachment, #postAttachment2, #attachment_previews {
-	border-top: 1px solid #ddd;
-	margin: -1px 0 0 0;
 	padding: 10px 0;
 }
 #postAttachment dd, #postAttachment2 dd {
@@ -4195,6 +4190,7 @@ tr[id^='list_news_lists_'] textarea {
 .videocontainer video {
 	object-fit: contain;
 	background: black;
+	max-width: 100%;
 }
 
 .backtrace:not(:last-child) {
